@@ -34,7 +34,10 @@ function shortcode_list_pages($atts, $content, $tag) {
 	$atts['echo'] = 0;
 	if($tag == 'child-pages')
 		$atts['child_of'] = $post->ID;	
-
+	
+	if ( $tag == 'sibling-pages' )
+		$atts['child_of'] = $post->post_parent;
+	
 	// create output
 	$out = wp_list_pages($atts);
 	if(!empty($out))
@@ -44,6 +47,7 @@ function shortcode_list_pages($atts, $content, $tag) {
 }
 
 add_shortcode('child-pages', 'shortcode_list_pages');
+add_shortcode( 'sibling-pages', 'shortcode_list_pages' );
 add_shortcode('list-pages', 'shortcode_list_pages');
 
 ?>
