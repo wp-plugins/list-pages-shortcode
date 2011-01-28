@@ -1,18 +1,18 @@
 === Plugin Name ===
-Contributors: aaron_guitar
+Contributors: aaron_guitar, husobj
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aaron%40freshwebs%2enet&item_name=Fotobook%20Donation&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: shortcodes, pages, list pages, child pages, subpages
+Tags: shortcodes, pages, list pages, sibling pages, child pages, subpages
 Requires at least: 2.5
-Tested up to: 2.7.1
-Stable tag: 1.0
+Tested up to: 3.0.4
+Stable tag: 1.1
 
-Introduces the [list-pages] and [child-pages] shortcodes for easily displaying a list of pages within a post or page.  
+Introduces the [list-pages], [sibling-pages] and [child-pages] shortcodes for easily displaying a list of pages within a post or page.
 
 == Description ==
 
-Introduces the [list-pages] and [child-pages] [shortcodes](http://codex.wordpress.org/Shortcode_API) for easily displaying a list of pages within a post or page.  Both shortcodes accept all parameters that you can pass to the [`wp_list_pages()`](http://codex.wordpress.org/Template_Tags/wp_list_pages) function with the addition of a class parameter.
+Introduces the [list-pages], [sibling-pages] and [child-pages] [shortcodes](http://codex.wordpress.org/Shortcode_API) for easily displaying a list of pages within a post or page.  Both shortcodes accept all parameters that you can pass to the [`wp_list_pages()`](http://codex.wordpress.org/Template_Tags/wp_list_pages) function with the addition of a class parameter.
 
-**Usage**
+= Usage =
 
 *List pages sorted by title*
 
@@ -26,9 +26,24 @@ Introduces the [list-pages] and [child-pages] [shortcodes](http://codex.wordpres
 
 `[child-pages depth="1"]`
 
-**Please Note**
+*List the current page's siblings and their subpages*
 
-The default values are the same as for the [`wp_list_pages()`](http://codex.wordpress.org/Template_Tags/wp_list_pages) function except for title_li which defaults to nothing.  If a class is not specified, a default class of either "list-pages" or "child-pages" is given to the UL tag.  In addition, the echo parameter has no effect.
+`[sibling-pages depth="2"]`
+
+= Please Note =
+
+The default values are the same as for the [`wp_list_pages()`](http://codex.wordpress.org/Template_Tags/wp_list_pages) function except for title_li which defaults to nothing.  If a class is not specified, a default class of either "list-pages", "sibling-pages" or "child-pages" is given to the UL tag.  In addition, the echo parameter has no effect.
+
+== Changelog ==
+
+= 1.1 =
+
+* Added 'shortcode_list_pages' filter.
+* Added [sibling-pages] shortcode.
+
+= 1.0 =
+
+* First release.
 
 == Installation ==
 
