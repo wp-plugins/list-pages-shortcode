@@ -43,7 +43,8 @@ function shortcode_list_pages($atts, $content, $tag) {
 	if(!empty($out))
 		$out = '<ul class="'.$atts['class'].'">' . $out . '</ul>';
 	
-  return $out;
+	return apply_filters( 'shortcode_list_pages', $out, $atts, $content, $tag );
+	
 }
 
 add_shortcode('child-pages', 'shortcode_list_pages');
