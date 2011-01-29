@@ -20,13 +20,18 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 		'show_date'   => '',
 		'date_format' => get_option( 'date_format' ),
 		'exclude'     => '',
+		'include'     => '',
 		'child_of'    => 0,
 		'title_li'    => '',
 		'authors'     => '',
 		'sort_column' => 'menu_order, post_title',
+		'sort_order'  => '',
 		'link_before' => '',
 		'link_after'  => '',
-		'exclude_tree'=> ''
+		'exclude_tree'=> '',
+		'meta_key'    => '',
+		'meta_value'  => '',
+		'offset'      => ''
 	);
 	
 	// Merge user provided atts with defaults
