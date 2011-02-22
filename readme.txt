@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aaron
 Tags: shortcodes, pages, list pages, sibling pages, child pages, subpages
 Requires at least: 2.5
 Tested up to: 3.0.4
-Stable tag: 1.1
+Stable tag: 1.2
 
 Introduces the [list-pages], [sibling-pages] and [child-pages] shortcodes for easily displaying a list of pages within a post or page.
 
@@ -35,6 +35,11 @@ Introduces the [list-pages], [sibling-pages] and [child-pages] [shortcodes](http
 The default values are the same as for the [`wp_list_pages()`](http://codex.wordpress.org/Template_Tags/wp_list_pages) function except for title_li which defaults to nothing.  If a class is not specified, a default class of either "list-pages", "sibling-pages" or "child-pages" is given to the UL tag.  In addition, the echo parameter has no effect.
 
 == Changelog ==
+
+= 1.2 =
+
+* Added shortcode support for 'exclude_current_page' parameter.
+* Added support for extra wp_list_pages() parameters: include, sort_order, meta_key, meta_value and offset.
 
 = 1.1 =
 
