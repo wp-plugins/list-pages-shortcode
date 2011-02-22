@@ -31,7 +31,8 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 		'exclude_tree'=> '',
 		'meta_key'    => '',
 		'meta_value'  => '',
-		'offset'      => ''
+		'offset'      => '',
+		'exclude_current_page' => 0
 	);
 	
 	// Merge user provided atts with defaults
@@ -43,6 +44,11 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 		$atts['child_of'] = $post->ID;
 	if ( $tag == 'sibling-pages' )
 		$atts['child_of'] = $post->post_parent;
+	if ( $atts['exclude_current_page'] && absint( $post->ID ) ) {
+		if ( !empty( $atts['exclude'] ) )
+			$atts['exclude'] .= ',';
+		$atts['exclude'] .= $post->ID;
+	}
 	
 	// Create output
 	$out = wp_list_pages( $atts );
