@@ -3,7 +3,7 @@ Contributors: aaron_guitar, husobj
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aaron%40freshwebs%2enet&item_name=Fotobook%20Donation&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
 Tags: shortcodes, pages, list pages, sibling pages, child pages, subpages
 Requires at least: 2.5
-Tested up to: 3.0.4
+Tested up to: 3.0.5
 Stable tag: 1.2
 
 Introduces the [list-pages], [sibling-pages] and [child-pages] shortcodes for easily displaying a list of pages within a post or page.
