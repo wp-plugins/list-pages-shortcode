@@ -13,6 +13,13 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 	
 	global $post;
 	
+	// Child Pages
+	$child_of = 0;
+	if ( $tag == 'child-pages' )
+		$child_of = $post->ID;
+	if ( $tag == 'sibling-pages' )
+		$child_of = $post->post_parent;
+	
 	// Set defaults
 	$defaults = array(
 		'class'       => $tag,
@@ -21,7 +28,7 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 		'date_format' => get_option( 'date_format' ),
 		'exclude'     => '',
 		'include'     => '',
-		'child_of'    => 0,
+		'child_of'    => $child_of,
 		'title_li'    => '',
 		'authors'     => '',
 		'sort_column' => 'menu_order, post_title',
@@ -40,10 +47,6 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 	
 	// Set necessary params
 	$atts['echo'] = 0;
-	if ( $tag == 'child-pages' )
-		$atts['child_of'] = $post->ID;
-	if ( $tag == 'sibling-pages' )
-		$atts['child_of'] = $post->post_parent;
 	if ( $atts['exclude_current_page'] && absint( $post->ID ) ) {
 		if ( !empty( $atts['exclude'] ) )
 			$atts['exclude'] .= ',';
