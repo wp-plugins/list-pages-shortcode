@@ -53,6 +53,8 @@ function shortcode_list_pages( $atts, $content, $tag ) {
 		$atts['exclude'] .= $post->ID;
 	}
 	
+	$atts = apply_filters( 'shortcode_list_pages_attributes', $atts, $content, $tag );
+	
 	// Create output
 	$out = wp_list_pages( $atts );
 	if ( !empty( $out ) )
